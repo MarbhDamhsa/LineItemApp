@@ -26,7 +26,7 @@ public class MainApp {
             //display the output
             System.out.println();
             if (product != null)
-                System.out.println(product);
+                product.print();
             else
                 System.out.println("No product matches this product code.\n");
             

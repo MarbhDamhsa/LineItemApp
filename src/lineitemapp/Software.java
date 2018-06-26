@@ -12,10 +12,10 @@ public class Software extends Product{
     }
     
     @Override
-    public String getDisplayText()
+    public void print()
     {
-        return super.toString() +
-            "Version:     " + version + "\n";
+        super.print();
+        System.out.println("Version:     " + version);
     }
     
     

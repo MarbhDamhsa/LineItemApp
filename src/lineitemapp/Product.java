@@ -2,7 +2,7 @@ package lineitemapp;
 
 import java.text.NumberFormat;
 
-public abstract class Product {
+public abstract class Product implements Printable{
 
     private String code;
     private String description;
@@ -25,15 +25,15 @@ public abstract class Product {
         this.price = price;
     }
     
-    @Override
-    public String toString()
+    
+    public void print()
     {
-        return "Code:        " + code + "\n" +
-               "Description: " + description + "\n" +
-               "Price:       " + this.getFormattedPrice() + "\n";
+        System.out.println("Code:        " + code);
+        System.out.println("Description: " + description);
+        System.out.println("Price:       " + this.getFormattedPrice());
     }
     
-    abstract String getDisplayText();
+    //abstract String getDisplayText();
     
     @Override
     public boolean equals(Object object)
