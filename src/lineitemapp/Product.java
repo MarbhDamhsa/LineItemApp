@@ -8,7 +8,7 @@ public class Product {
     private String description;
     private double price;
     
-    private static int objectCount = 0;
+    protected static int count = 0;
     
     public Product()
     {
@@ -24,6 +24,20 @@ public class Product {
         this.description = description;
         this.price = price;
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Code:        " + code + "\n" +
+               "Description: " + description + "\n" +
+               "Price:       " + this.getFormattedPrice() + "\n";
+    }
+    
+    public static int getCount()
+    {
+        return count;
+    }
+    
 
     public void setCode(String code)
     {

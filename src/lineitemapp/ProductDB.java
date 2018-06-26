@@ -12,35 +12,47 @@ public class ProductDB {
         // to return the correct product data
 
         // create the Product object
-        Product product = new Product();
+        Product p = null;
 
-        // fill the Product object with data
-        product.setCode(productCode);
-        if (productCode.equalsIgnoreCase("java"))
+        if (productCode.equalsIgnoreCase("java") ||
+            productCode.equalsIgnoreCase("jsps") ||
+            productCode.equalsIgnoreCase("mcb2"))
         {
-            product.setDescription("Murach's Beginning Java");
-            product.setPrice(49.50);
+            
+            Book b = new Book();
+            if (productCode.equalsIgnoreCase("java"))
+            {
+                b.setCode(productCode);
+                b.setDescription("Murach's Beginning Java");
+                b.setPrice(49.50);
+                b.setAuthor("Andrea Steelman");
+            }
+
+            else if (productCode.equalsIgnoreCase("jsps"))
+            {
+                b.setCode(productCode);
+                b.setDescription("Murach's Java Servlets and JSP");
+                b.setPrice(49.50);
+                b.setAuthor("Andrea Steelman");
+            }
+            else if (productCode.equalsIgnoreCase("mcb2"))
+            {
+                b.setCode(productCode);
+                b.setDescription("Murach's Mainframe COBOL");
+                b.setPrice(59.50);
+                b.setAuthor("Mike Murach");
+            }
+            p = b; //set Product variable equal to the book object
         }
         else if (productCode.equalsIgnoreCase("txtp"))
         {
-            product.setDescription("Textpad");
-            product.setPrice(20.00);
+            Software s = new Software();
+            s.setCode("txtp");
+            s.setDescription("Textpad");
+            s.setPrice(27.00);
+            s.setVersion("4.7.3");
+            p = s;
         }
-        else if (productCode.equalsIgnoreCase("jsps"))
-        {
-            product.setDescription("Murach's Java Servlets and JSP");
-            product.setPrice(49.50);
-        }
-        else if (productCode.equalsIgnoreCase("mcb2"))
-        {
-            product.setDescription("Murach's Mainframe COBOL");
-            product.setPrice(59.50);
-        }
-        else
-        {
-            product.setDescription("Unknown");
-        }
-        return product;
+        return p;
     }
-    
 }//class ProductDB
