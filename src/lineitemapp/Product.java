@@ -2,7 +2,7 @@ package lineitemapp;
 
 import java.text.NumberFormat;
 
-public class Product {
+public abstract class Product {
 
     private String code;
     private String description;
@@ -31,6 +31,25 @@ public class Product {
         return "Code:        " + code + "\n" +
                "Description: " + description + "\n" +
                "Price:       " + this.getFormattedPrice() + "\n";
+    }
+    
+    abstract String getDisplayText();
+    
+    @Override
+    public boolean equals(Object object)
+    {
+        if (object instanceof Product)
+        {
+            Product product2 = (Product) object;
+            if
+            (
+                code.equals(product2.getCode()) &&
+                description.equals(product2.getDescription()) &&
+                price == product2.getPrice()
+            )
+                return true;
+        }
+        return false;
     }
     
     public static int getCount()

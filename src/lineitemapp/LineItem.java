@@ -12,7 +12,7 @@ public class LineItem {
     public LineItem()
     {
         
-        this.product = new Product();
+    //    this.product = new Product();
         this.quantity = 0;
         this.total = 0;
         
@@ -27,6 +27,24 @@ public class LineItem {
         this.quantity = quantity;
         
     }//LineItem()
+    
+
+    
+    @Override
+    public boolean equals(Object object)
+    {
+        if (object instanceof LineItem)
+        {
+            LineItem li = (LineItem) object;
+            if
+            (
+                product.equals(li.getProduct()) &&
+                quantity == li.getQuantity()
+            )
+                return true;
+        }
+        return false;
+    }
     
     
     

@@ -23,10 +23,12 @@ public class Book extends Product{
     }
     
     @Override
-    public String toString()
+    public String getDisplayText()
     {
         return super.toString() +
             "Author:      " + author + "\n";
     }
+    
+    
     
 }
